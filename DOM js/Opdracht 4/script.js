@@ -1,29 +1,31 @@
 let button = document.querySelector("#button");
-button.addEventListener("click", waardes);
 
-let button2 = document.querySelector("#button2");
-button2.addEventListener("click", countNumber(1));
-
+let arr = [];
 let textElement = document.querySelector("#text");
 
+let button2 = document.querySelector("#button2");
+button2.addEventListener("click", countNumber(4));
+button.addEventListener("click", waardes);
+
 function waardes() {
-    const array = [];
+    arr = [];
     for (let i = 0; i < 5; i++) {
-        array.push(Math.floor(Math.random() * 6) + 1);
+        arr.push(Math.floor(Math.random() * 6) + 1);
     }
-    console.log(array);
-    // for (let i = 0; i < array.length; i++) {
-    //     textElement.textContent += " " + array[i];
+    console.log(arr);
+    // for (let i = 0; i < arr.length; i++) {
+    //     textElement.textContent += " " + arr[i];
     // }
-    textElement.textContent = array;
+    textElement.textContent = arr;
 }
 
-function countNumber(nummer){
+function countNumber(nummer) {
     let aantal = 0;
-    for (let i = 0; i < array.length; i++){
-        if (array[i] == nummer){
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] == nummer) {
             aantal++
         }
     }
+    console.log(aantal);
 
 }
