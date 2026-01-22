@@ -4,7 +4,9 @@ let arr = [];
 let textElement = document.querySelector("#text");
 
 let button2 = document.querySelector("#button2");
-button2.addEventListener("click", countNumber(1));
+button.addEventListener("click", () => {
+        countNumber(1);
+});
 button.addEventListener("click", waardes);
 
 function waardes() {
