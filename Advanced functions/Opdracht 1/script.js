@@ -2,5 +2,5 @@ function toCelsius(fahrenheit) {
     return (5/9) * (fahrenheit-32);
 }
 let value1 = toCelsius(10);
-let value2 = toCelsius;
+let value2 = toCelsius(1);
 console.log(typeof value1, typeof value2);
