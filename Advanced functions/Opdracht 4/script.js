@@ -1,3 +1,2 @@
 const woorden = ['JavaScript', 'is', 'erg' ,'leuk'];
-
-woorden.forEach(waarde => console.log(waarde));
+console.log(woorden.filter(x => x.length >= 3));
