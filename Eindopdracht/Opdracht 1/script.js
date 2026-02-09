@@ -15,6 +15,9 @@ let waardes = () => {
     const all = [arr1, arr2, arr3, arr4];
     
     const test = all.map(arr => arr.map(x => (Math.floor(Math.random() * 6) + 1)));
+
+    textElement.textContent = test[0] + "| |" + test[1];
+    textElement2.textContent = test[2] + "| |" + test[3];
     
     total = test.map(arr => arr.reduce((sum, n) => sum + n, 0));
     player1 = total[1] + total[0];

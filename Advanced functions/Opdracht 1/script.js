@@ -3,4 +3,4 @@ function toCelsius(fahrenheit) {
 }
 let value1 = toCelsius(10);
 let value2 = toCelsius;
-console.log(typeof value1, typeof value2);// displayed number function omdat value1 een nummer is en value2 een naam van een fucntion
+console.log(typeof value1, typeof value2);// displayed number function omdat value1 een nummer is en value2 een fucntion

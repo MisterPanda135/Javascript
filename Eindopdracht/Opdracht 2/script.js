@@ -3,8 +3,10 @@ let button = document.querySelector("#button");
 let textElement = document.querySelector("#text");
 let textElement2 = document.querySelector("#text2");
 let textElement3 = document.querySelector("#text3");
+let textElement4 = document.querySelector("#text4");
 let player1Wins = 0;
 let player2Wins = 0;
+let playerDraws = 0;
 
 const getSum = (totaal, nummer) => totaal + nummer;
 
@@ -38,9 +40,12 @@ let waardes = () => {
         player1Wins++
     }if (player1Total < player2Total){
         textElement3.textContent = "Player 2 wins!";
+        player2Wins++
     }if (player1Total == player2Total) {
         textElement3.textContent = "Its a draw.";
+        playerDraws++
     }
     textElement.textContent = dobbelstenenAamtal[0] + ", " + dobbelstenenAamtal[1] + "\n" + " Player1 wins:" + player1Wins;
-    textElement2.textContent = dobbelstenenAamtal[2] + ", " + dobbelstenenAamtal[3]+ "\n" + " Player2 wins:" + player2Wins;;
+    textElement2.textContent = dobbelstenenAamtal[2] + ", " + dobbelstenenAamtal[3]+ "\n" + " Player2 wins:" + player2Wins;
+    textElement4.textContent = "Draws: " + playerDraws;
 }
