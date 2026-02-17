@@ -13,18 +13,19 @@ let dobbelStenenAantal2
 
 const getSum = (totaal, nummer) => totaal + nummer;
 
-button.addEventListener("click", gooi);
+button.addEventListener("click", () => {
+    waardes();
+});
 
-function gooi() {
+let waardes = () => {
     const dobbelsteen1 = [0, 0];
     const dobbelsteen2 = [0, 0];
-    
-    for (let i = 0; i < 2; i++){
-        dobbelsteen1[i] = Math.floor(Math.random() * 6) + 1;
-        dobbelsteen2[i] = Math.floor(Math.random() * 6) + 1;
-    }
-    player1Total = dobbelsteen1.reduce(getSum);
-    player2Total = dobbelsteen2.reduce(getSum);
+
+    dobbelStenenAantal1 = dobbelsteen1.map(() => (Math.floor(Math.random() * 6) + 1));
+    dobbelStenenAantal2 = dobbelsteen2.map(() => (Math.floor(Math.random() * 6) + 1));
+
+    player1Total = dobbelStenenAantal1.reduce(getSum);
+    player2Total = dobbelStenenAantal2.reduce(getSum);
 
     console.log("Player 1: " + player1Total + " " +  dobbelsteen1[0] + " " + dobbelsteen1[1]);
     console.log("Player 2: " + player2Total + " " + dobbelsteen2[0] + " " + dobbelsteen2[1]);
@@ -39,8 +40,7 @@ function gooi() {
         textElement3.textContent = "Its a draw.";
         playerDraws++
     }
-    textElement.textContent = "Player 1: " + dobbelsteen1[0] + " " + dobbelsteen1[1] + " Player1 wins " + player1Wins;
-    textElement2.textContent = "Player 2: " +  dobbelsteen2[0] + " " + dobbelsteen2[1] + " Player2 wins: " + player2Wins;
+    textElement.textContent = dobbelStenenAantal1[0] + ", " + dobbelStenenAantal1[1] + "\n" + " Player1 wins:" + player1Wins;
+    textElement2.textContent = dobbelStenenAantal2[0] + ", " + dobbelStenenAantal2[1] + "\n" + " Player2 wins:" + player2Wins;
     textElement4.textContent = "Draws: " + playerDraws;
-
 }
