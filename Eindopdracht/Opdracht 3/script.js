@@ -1,6 +1,6 @@
-let textElement = document.querySelector("#text");
+const textElement = document.querySelector("#text");
 let playerLives = 10;
-const paragraph = "javascript";
+const paragraph = "javasc8ript";
 const arr = [];
 for (let i = 0; i < paragraph.length; i ++){
     arr[i] = "_";
@@ -20,9 +20,9 @@ function log(value){
     
     const searchTerm = value;
     const indexOfFirst = paragraph.indexOf(searchTerm);
-    let indexOfSecond = paragraph.indexOf(searchTerm, indexOfFirst + 1);
-    let indexOfThird = paragraph.indexOf(searchTerm, indexOfSecond + 1);
-    let indexOfFourth = paragraph.indexOf(searchTerm, indexOfThird + 1);
+    const indexOfSecond = paragraph.indexOf(searchTerm, indexOfFirst + 1);
+    const indexOfThird = paragraph.indexOf(searchTerm, indexOfSecond + 1);
+    const indexOfFourth = paragraph.indexOf(searchTerm, indexOfThird + 1);
 
     if (indexOfFirst > -1){
         console.log(`The index of the first "${searchTerm}" is ${indexOfFirst}`);
