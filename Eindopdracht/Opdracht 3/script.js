@@ -1,6 +1,6 @@
 let textElement = document.querySelector("#text");
 let playerLives = 10;
-const paragraph = "Javascript";
+const paragraph = "javascript";
 const arr = [];
 for (let i = 0; i < paragraph.length; i ++){
     arr[i] = "_";
@@ -38,10 +38,11 @@ function log(value){
                 }
             }
         }
+    }else {
+        playerLives--;
     }
     if (playerLives > 0){
-        playerLives--;
-        textElement.textContent = arr.join("") + " " + "Levens:" + playerLives;
+        textElement.textContent = arr.join(" ") + " " + "Levens:" + playerLives;
     }else{
         textElement.textContent = "Je hebt geen levens meer!"
     }
