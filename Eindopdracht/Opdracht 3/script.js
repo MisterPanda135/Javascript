@@ -5,6 +5,7 @@ const arr = [];
 for (let i = 0; i < paragraph.length; i ++){
     arr[i] = "_";
 }
+textElement.textContent = arr.join(" ") + " " + "Levens:" + playerLives;
 
 function getValue() {
     const value = document.getElementById("Guess").value;
