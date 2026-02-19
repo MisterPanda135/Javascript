@@ -1,6 +1,6 @@
 const textElement = document.querySelector("#text");
 let playerLives = 10;
-const paragraph = "javasc8ript";
+const paragraph = "javascript";
 const arr = [];
 for (let i = 0; i < paragraph.length; i ++){
     arr[i] = "_";
@@ -8,7 +8,7 @@ for (let i = 0; i < paragraph.length; i ++){
 textElement.textContent = arr.join(" ") + " " + "Levens:" + playerLives;
 
 function getValue() {
-    const value = document.getElementById("Guess").value;
+    value = document.getElementById("Guess").value;
     if (value != ""){
         if (value.length == 1){
             log(value);
@@ -18,11 +18,11 @@ function getValue() {
 
 function log(value){
     
-    const searchTerm = value;
-    const indexOfFirst = paragraph.indexOf(searchTerm);
-    const indexOfSecond = paragraph.indexOf(searchTerm, indexOfFirst + 1);
-    const indexOfThird = paragraph.indexOf(searchTerm, indexOfSecond + 1);
-    const indexOfFourth = paragraph.indexOf(searchTerm, indexOfThird + 1);
+    searchTerm = value;
+    indexOfFirst = paragraph.indexOf(searchTerm);
+    indexOfSecond = paragraph.indexOf(searchTerm, indexOfFirst + 1);
+    indexOfThird = paragraph.indexOf(searchTerm, indexOfSecond + 1);
+    indexOfFourth = paragraph.indexOf(searchTerm, indexOfThird + 1);
 
     if (indexOfFirst > -1){
         console.log(`The index of the first "${searchTerm}" is ${indexOfFirst}`);
@@ -46,6 +46,10 @@ function log(value){
         textElement.textContent = arr.join(" ") + " " + "Levens:" + playerLives;
     }else{
         textElement.textContent = "Je hebt geen levens meer!"
+    }
+
+    if (arr.join("") === paragraph){
+        textElement.textContent = "Je hebt gewonnen!";
     }
 
 }
