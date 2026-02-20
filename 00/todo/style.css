@@ -9,5 +9,21 @@
     border: black solid 2px;
     width: 55%;
     margin: 20px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    
+}
+
+.task-content {
     overflow-wrap: break-word;
+    border: blue solid 2px;
+    width: 65%;
+    
+}
+
+.button {
+    border-width: 0px;
+    background-color: white;
+    padding: 20px;
 }

@@ -21,11 +21,20 @@ function addTask(name) {
     tasks.forEach(task => {
         htmlContent += `
             <div class="task">
-                <h3>${task.name}</h3>
-                <p>Completed:${task.completed}</p>
+                <div class="task-content">
+                    <h3>${task.name}</h3>
+                    <p>Completed:${task.completed}</p>
+                </div>
+                <div class="remove">
+                    <button class="button" id="button${task.name}" onclick="delete(this)">>❌</button>
+                </div>
             </div>
         `;   
     })
     container.innerHTML = htmlContent;
     console.log(tasks);
+}
+
+function deleteTask(id) {
+
 }
