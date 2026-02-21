@@ -24,7 +24,7 @@ function loadTask() {
 
     tasks.forEach(task => {
         htmlContent += `
-            <div class="task">
+            <div class="task" id="task-${task.id}">
                 <div class="task-content">
                     <p>Id = ${task.id}</p>
                     <h3>${task.name}</h3>
@@ -32,7 +32,7 @@ function loadTask() {
                 </div>
                 <div class="remove">
                     <button class="button" id="${task.id}" onclick="deleteTask(this)">❌</button>
-                    <button class="button" id="${task.id}" onclick="deleteTask(this)">❌</button>
+                    <button class="button" id="${task.id}" onclick="completeTask(this)">✔️</button>
                 </div>
             </div>
         `;   
@@ -41,9 +41,30 @@ function loadTask() {
     console.log(tasks);
 }
 
-function deleteTask(id) {
-    const idToRemove = Number(id.id);
-    tasks = tasks.filter(task => task.id !== idToRemove);
-    console.log(tasks);
+function deleteTask(button) {
+    const idToRemove = Number(button.id);
+    const element = document.getElementById(`task-${idToRemove}`);
+
+    element.classList.add("fade-out");
+
+    setTimeout(() => {
+        tasks = tasks.filter(task => task.id !== idToRemove);
+
+        loadTask();
+    }, 400); 
+}
+
+
+function completeTask(id) {
+    const idToComplete = Number(id.id);
+    tasks = tasks.map(task => {
+        if (task.id === idToComplete) {
+            return {
+                id: task.id,
+                name: task.name,
+                completed: !task.completed };
+            } else {
+                return task;
+} });
     loadTask();
 }
