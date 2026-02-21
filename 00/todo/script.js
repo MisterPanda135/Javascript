@@ -1,4 +1,4 @@
-const tasks = [];
+let tasks = [];
 
 function getValue() {
     value = document.getElementById("task").value;
@@ -9,12 +9,16 @@ function getValue() {
 
 function addTask(name) {
     const newTask = {
+        id: tasks.length + 1,
         name: name,
         completed: false
     };
 
     tasks.push(newTask);
+    loadTask();
+}
 
+function loadTask() {
     const container = document.getElementById('task-container');
     let htmlContent = '';
 
@@ -22,11 +26,13 @@ function addTask(name) {
         htmlContent += `
             <div class="task">
                 <div class="task-content">
+                    <p>Id = ${task.id}</p>
                     <h3>${task.name}</h3>
                     <p>Completed:${task.completed}</p>
                 </div>
                 <div class="remove">
-                    <button class="button" id="button${task.name}" onclick="delete(this)">>❌</button>
+                    <button class="button" id="${task.id}" onclick="deleteTask(this)">❌</button>
+                    <button class="button" id="${task.id}" onclick="deleteTask(this)">❌</button>
                 </div>
             </div>
         `;   
@@ -36,5 +42,8 @@ function addTask(name) {
 }
 
 function deleteTask(id) {
-
+    const idToRemove = Number(id.id);
+    tasks = tasks.filter(task => task.id !== idToRemove);
+    console.log(tasks);
+    loadTask();
 }
